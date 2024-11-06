@@ -9,7 +9,9 @@ COPY package*.json ./
 
 # Copy package.json and package-lock.json to the working directory
 #COPY frontend/package*.json frontend/
-COPY app/package*.json app/
+#COPY app/package*.json app/
+COPY ./app/package*.json ./app/
+
 
 
 # Install Node.js dependencies for frontend (Client) and backend (Server)
