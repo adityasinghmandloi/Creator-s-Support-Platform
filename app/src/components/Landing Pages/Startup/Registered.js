@@ -6,12 +6,12 @@ const Registered = () => {
     return (
         <>
         <Navbar />
-                <div className="registered__main__container">
+            <div className="registered__main__container">
                 <div className="container">
-                    <h1 className="text-center my-3 startup__heading">For Entrepreneurs</h1>
+                    <h1 className="text-center my-3 startup__heading">For Creators</h1>
                     <div className="registered my-5">
                         <div className="registered__heading text-center">
-                            BRUSH UP THE BASICS
+                            GETTING STARTED AS A CREATOR
                         </div>
                         <div className="registered__container">
                             <div className="timeline my-5">
@@ -19,7 +19,7 @@ const Registered = () => {
                                     <i className="icon fa fa-home"></i>
                                     <div className="content">
                                         <p>
-                                            Know your idea's worth by doing research in domain
+                                            Define your passion and identify your target supporters.
                                         </p>
                                     </div>
                                 </div>
@@ -27,7 +27,7 @@ const Registered = () => {
                                     <i className="icon fa-solid fa-shield"></i>
                                     <div className="content">
                                         <p>
-                                            Go through the resources section to know the rules
+                                            Access the resources section to learn how to engage effectively.
                                         </p>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@ const Registered = () => {
                                     <i className="icon fa fa-user"></i>
                                     <div className="content">
                                         <p>
-                                            Showcase your vision with an attractive website
+                                            Build an inspiring profile to share your creative journey.
                                         </p>
                                     </div>
                                 </div>
@@ -43,49 +43,11 @@ const Registered = () => {
                         </div>
                     </div>
                 </div>
-                <div className="container">
-                <div className="registered my-5">
-                    <div className="registered__heading text-center">
-                        GET YOUR STARTUP REGISTERED
-                    </div>
-                    <div className="registered__container">
-                        <div className="timeline my-5">
-                            <div className="section left">
-                                <i className="icon fa fa-home"></i>
-                                <div className="content">
-                                    <p>
-                                        Fill all details in the registeration form and set a realisitic fund goal
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="section right">
-                                <i className="icon fa-solid fa-shield"></i>
-                                <div className="content">
-                                    <p>
-                                        Verification part!! Wait for the verification
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="section left">
-                                <i className="icon fa fa-user"></i>
-                                <div className="content">
-                                    <p>
-                                        Get a sharable link, and share as much as possible
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-
-
 
                 <div className="container">
-                    <h1 className="text-center my-3 startup__heading">For Investors</h1>
                     <div className="registered my-5">
                         <div className="registered__heading text-center">
-                            THE INVESTORS'S PROCESS
+                            REGISTER AS A CREATOR
                         </div>
                         <div className="registered__container">
                             <div className="timeline my-5">
@@ -93,7 +55,7 @@ const Registered = () => {
                                     <i className="icon fa fa-home"></i>
                                     <div className="content">
                                         <p>
-                                            Go through the basics in the resources section
+                                            Complete the registration form with your details and set clear goals.
                                         </p>
                                     </div>
                                 </div>
@@ -101,7 +63,7 @@ const Registered = () => {
                                     <i className="icon fa-solid fa-shield"></i>
                                     <div className="content">
                                         <p>
-                                            Login or register yourself
+                                            Undergo a verification process to validate your profile.
                                         </p>
                                     </div>
                                 </div>
@@ -109,7 +71,28 @@ const Registered = () => {
                                     <i className="icon fa fa-user"></i>
                                     <div className="content">
                                         <p>
-                                            Pick the one idea that you find worth investing
+                                            Share your unique link with potential supporters.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container">
+                    <h1 className="text-center my-3 startup__heading">For Supporters</h1>
+                    <div className="registered my-5">
+                        <div className="registered__heading text-center">
+                            HOW TO SUPPORT CREATORS
+                        </div>
+                        <div className="registered__container">
+                            <div className="timeline my-5">
+                                <div className="section left">
+                                    <i className="icon fa fa-home"></i>
+                                    <div className="content">
+                                        <p>
+                                            Browse through the basics in the resources section.
                                         </p>
                                     </div>
                                 </div>
@@ -117,7 +100,7 @@ const Registered = () => {
                                     <i className="icon fa-solid fa-shield"></i>
                                     <div className="content">
                                         <p>
-                                            Visit website of your selected idea to know more
+                                            Register or log in to start supporting creators.
                                         </p>
                                     </div>
                                 </div>
@@ -125,7 +108,23 @@ const Registered = () => {
                                     <i className="icon fa fa-user"></i>
                                     <div className="content">
                                         <p>
-                                            Choose a fund size and pay with a method of your convinience
+                                            Choose a creator whose work resonates with you.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="section right">
+                                    <i className="icon fa-solid fa-shield"></i>
+                                    <div className="content">
+                                        <p>
+                                            Visit their profile to learn more about their vision.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="section left">
+                                    <i className="icon fa fa-user"></i>
+                                    <div className="content">
+                                        <p>
+                                            Select a support amount and complete your contribution.
                                         </p>
                                     </div>
                                 </div>

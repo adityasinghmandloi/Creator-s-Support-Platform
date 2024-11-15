@@ -2,21 +2,16 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const URI = process.env.MONGO_URI;
 
-const connectToMongo = () => {
+const connectToMongo = async () => {
   try {
-    mongoose.connect(
-      URI,
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      },
-      (err) => {
-        if (err) throw err;
-        console.log("Connected to mongodb");
-      }
-    );
+    await mongoose.connect(URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB");
   } catch (err) {
-    console.log(err);
+    console.error("Error connecting to MongoDB:", err);
   }
 };
+
 module.exports = connectToMongo;

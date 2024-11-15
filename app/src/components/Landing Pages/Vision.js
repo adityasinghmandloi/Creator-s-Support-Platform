@@ -21,15 +21,15 @@ const Vision = () => {
           <div className="first__section text-center my-5">
             <h1 className="vision__heading my-3">Our Vision</h1>
             <h2 className="vision__desc my-3">
-              Our aim is to transform the landscape of crowdfunding, making it
-              accessible, secure, and straightforward for young entrepreneurs.{" "}
-              <br></br> By prioritizing these pillars, we empower the next
-              generation of innovators.
+              We strive to reshape the creator support ecosystem, making it
+              accessible, secure, and intuitive for all creators.{" "}
+              <br></br> By focusing on these principles, we empower creators to
+              bring meaningful projects to life.
             </h2>
             <h2 className="vision__desc my-3">
-              Our mission extends beyond individual success, fostering a dynamic
-              <br></br> crowdfunding ecosystem that engages and benefits society
-              as a whole.
+              Our mission is to go beyond individual achievements and foster a
+              vibrant <br></br> support network that positively impacts
+              communities and enriches society as a whole.
             </h2>
           </div>
           <div className="second__section">
@@ -42,3 +42,4 @@ const Vision = () => {
 };
 
 export default Vision;
+

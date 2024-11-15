@@ -3,12 +3,14 @@ import "./Form.css";
 import { Link, useNavigate } from "react-router-dom";
 import UserContext from "../../Context/userContext";
 import axios from "../../Axios/axios";
+
 const Form = () => {
   useEffect(() => {
     if (!localStorage.getItem("token")) {
       navigate("/login");
     }
   }, []);
+  
   const [credentials, setCredentials] = useState({
     Name: "",
     Description: "",
@@ -24,9 +26,11 @@ const Form = () => {
     Ask: 0,
     IsVerified: true,
   });
+  
   const navigate = useNavigate();
   const context = useContext(UserContext);
   let { showAlert } = context;
+
   const createStartup = async (e) => {
     e.preventDefault();
     const {
@@ -91,9 +95,11 @@ const Form = () => {
     });
     navigate("/dashboard");
   };
+
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
+
   return (
     <>
       <div className="card mb-3 mx-auto my-5 startup_form">
@@ -101,16 +107,16 @@ const Form = () => {
           <div className="col-md-7">
             <div className="card-body">
               <h1 className="card-title text-center startup_form_head">
-                Startup Registration Form
+                Creator Profile Registration
               </h1>
               <form className="my-4" onSubmit={createStartup}>
                 <div className="mb-3">
                   <label htmlFor="Name" className="form-label text-muted">
-                    What is the name of your startup?
+                    What is your creator or brand name?
                   </label>
                   <input
                     type="text"
-                    placeholder="Startup Name"
+                    placeholder="Creator or Brand Name"
                     className="form-control form_input"
                     id="Name"
                     name="Name"
@@ -120,12 +126,12 @@ const Form = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="Website" className="form-label text-muted">
-                    Enter the url of your logo
+                  <label htmlFor="LogoUrl" className="form-label text-muted">
+                    Enter the URL of your profile image or logo
                   </label>
                   <input
                     type="url"
-                    placeholder="Enter URL"
+                    placeholder="Profile Image or Logo URL"
                     className="form-control form_input"
                     id="LogoUrl"
                     name="LogoUrl"
@@ -135,11 +141,8 @@ const Form = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label
-                    htmlFor="Description"
-                    className="form-label text-muted"
-                  >
-                    Describe your startup in less than 50 words?
+                  <label htmlFor="Description" className="form-label text-muted">
+                    Briefly describe your content or projects
                   </label>
                   <textarea
                     rows="4"
@@ -153,41 +156,39 @@ const Form = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="Website" className="form-label text-muted">
-                    Enter your website's address
+                    Enter your website's address (optional)
                   </label>
                   <input
                     type="url"
-                    placeholder="Website's Address"
+                    placeholder="Website Address"
                     className="form-control form_input"
                     id="Website"
                     name="Website"
                     value={credentials.Website}
                     onChange={onChange}
-                    required={true}
                   />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="Instagram" className="form-label text-muted">
-                    Enter your Startup's Instagram Page's link
+                    Social media link (Instagram, Twitter, etc.)
                   </label>
                   <input
                     type="url"
-                    placeholder="Startup's Instagram Page's link"
+                    placeholder="Social Media Link"
                     className="form-control form_input"
                     id="Instagram"
                     name="Instagram"
                     value={credentials.Instagram}
                     onChange={onChange}
-                    required={true}
                   />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="Email" className="form-label text-muted">
-                    Enter your Startup's Email
+                    Contact Email
                   </label>
                   <input
-                    type="Email"
-                    placeholder="Startup's Email (Official)"
+                    type="email"
+                    placeholder="Contact Email"
                     className="form-control form_input"
                     id="Email"
                     name="Email"
@@ -198,22 +199,21 @@ const Form = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="LinkedIn" className="form-label text-muted">
-                    Enter your Startup's LinkedIn Page's link
+                    LinkedIn profile link (if applicable)
                   </label>
                   <input
                     type="url"
-                    placeholder="Startup's LinkedIn Page's link"
+                    placeholder="LinkedIn Profile Link"
                     className="form-control form_input"
                     id="LinkedIn"
                     name="LinkedIn"
                     value={credentials.LinkedIn}
                     onChange={onChange}
-                    required={true}
                   />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="Category" className="form-label text-muted">
-                    Select the category in which your startup operate
+                    Select the type of content you create
                   </label>
                   <select
                     className="form-select form_input"
@@ -224,21 +224,24 @@ const Form = () => {
                     onChange={onChange}
                     required={true}
                   >
-                    <option>Choose the category</option>
-                    <option value="Art">Art</option>
+                    <option>Choose your content type</option>
                     <option value="Design and Tech">Design and Tech</option>
+                    <option value="Art">Art</option>
                     <option value="Film">Film</option>
                     <option value="Games">Games</option>
                     <option value="Music">Music</option>
                     <option value="Publishing">Publishing</option>
+                    
                     <option value="Finance">Finance</option>
                     <option value="Education">Education</option>
+                    
                     <option value="Eco-Friendly">Eco-Friendly</option>
                   </select>
+                  
                 </div>
                 <div className="mb-3">
                   <label htmlFor="Vision" className="form-label text-muted">
-                    Explain your startup's Vision in less than 50 words.
+                    What is your mission or vision as a creator?
                   </label>
                   <textarea
                     rows="4"
@@ -251,11 +254,8 @@ const Form = () => {
                   ></textarea>
                 </div>
                 <div className="mb-3">
-                  <label
-                    htmlFor="Problemstatement"
-                    className="form-label text-muted"
-                  >
-                    State the problem you are trying to solve with your startup
+                  <label htmlFor="Problemstatement" className="form-label text-muted">
+                    Describe the challenges you face in your field (optional)
                   </label>
                   <textarea
                     rows="4"
@@ -264,13 +264,11 @@ const Form = () => {
                     name="Problemstatement"
                     value={credentials.Problemstatement}
                     onChange={onChange}
-                    required={true}
                   ></textarea>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="Solution" className="form-label text-muted">
-                    Explain how and why your are different and better than other
-                    competitors(If any).
+                    How are you unique or different from others in your field?
                   </label>
                   <textarea
                     rows="4"
@@ -284,11 +282,11 @@ const Form = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="Ask" className="form-label text-muted">
-                    How much amount you want to raise for your startup?
+                    How much funding are you asking for?
                   </label>
                   <input
                     type="number"
-                    placeholder="Amount"
+                    placeholder="Amount in INR"
                     className="form-control form_input"
                     id="Ask"
                     name="Ask"
@@ -307,7 +305,7 @@ const Form = () => {
             <img
               src="https://static.vecteezy.com/system/resources/previews/000/175/200/large_2x/free-startup-vector-illustration.jpg"
               className="img-fluid rounded-start startup_form_side_img"
-              alt="startup-image"
+              alt="creator-image"
             />
           </div>
         </div>

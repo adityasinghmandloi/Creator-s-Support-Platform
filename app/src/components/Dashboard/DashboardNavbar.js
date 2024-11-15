@@ -50,7 +50,7 @@ const DashboardNavbar = () => {
                   to="/dashboard/create-startup"
                 >
                   <i className="fa-solid fa-plus"></i>{" "}
-                  <span className="nav__link__name">Create Startup</span>{" "}
+                  <span className="nav__link__name">New Venture</span>{" "}
                 </Link>
               </li>
               <li className="nav-item dropdown p-1">

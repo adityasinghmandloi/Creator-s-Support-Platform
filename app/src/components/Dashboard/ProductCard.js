@@ -46,52 +46,78 @@ const ProductCard = (props) => {
                     </div>
                 </div>
                 <div className="col-lg-5 col-md-12 col-sm-12 mb-3">
-                    <label className="startup_label">Startup Name</label>
-                    <p className="startup_label_desc">{props.data.Name}</p>
-                    <hr className="startup_label_hr" />
-                    <label className="startup_label">Description</label>
-                    <p className="startup_label_desc">{(props.data.Description)}</p>
-                    <hr className="startup_label_hr" />
-                    <label className="startup_label">Website's Address</label>
-                    <p className="startup_label_desc">{props.data.Website}</p>
-                    <hr className="startup_label_hr" />
-                    <label className="startup_label">Startup Category</label>
-                    <p className="startup_label_desc">{props.data.Category}</p>
-                    <hr className="startup_label_hr" />
-                    <label className="startup_label">Startup's Vision</label>
-                    <p className="startup_label_desc">{props.data.Vision}</p>
-                    <hr className="startup_label_hr" />
-                    <label className="startup_label">Problem Domain</label>
-                    <p className="startup_label_desc">{props.data.Problemstatement}</p>
-                    <hr className="startup_label_hr" />
-                    <label className="startup_label">How they are solving the problem</label>
-                    <p className="startup_label_desc">{props.data.Solution}</p>
-                    <hr className="startup_label_hr" />
+                <label className="startup_label">Creator Name</label>
+                <p className="startup_label_desc">{props.data.Name}</p>
+                <hr className="startup_label_hr" />
+                <label className="startup_label">About the Creator</label>
+                <p className="startup_label_desc">{props.data.Description}</p>
+                <hr className="startup_label_hr" />
+                <label className="startup_label">Website's Address</label>
+                <p className="startup_label_desc">{props.data.Website}</p>
+                <hr className="startup_label_hr" />
+                <label className="startup_label">Creator Category</label>
+                <p className="startup_label_desc">{props.data.Category}</p>
+                <hr className="startup_label_hr" />
+                <label className="startup_label">Creator's Vision</label>
+                <p className="startup_label_desc">{props.data.Vision}</p>
+                <hr className="startup_label_hr" />
+                <label className="startup_label">How They Engage with Their Community</label>
+                <p className="startup_label_desc">{props.data.Solution}</p>
+                <hr className="startup_label_hr" />
+                <label className="startup_label">Their Problem Domain</label>
+                <p className="startup_label_desc">{props.data.Problemstatement}</p>
+                <hr className="startup_label_hr" />
+                <label className="startup_label">How They Are Solving the Problem</label>
+                <p className="startup_label_desc">{props.data.Solution}</p>
+                <hr className="startup_label_hr" />
                 </div>
                 <div className="col-lg-3 col-md-12 col-sm-12 mb-3">
-                    <div className="card product_card">
-                        <div className="card-body">
-                            {!isbacker ? (<><h2 className="product_card_title">₹ {props.data.Current}</h2>
+                <div className="card product_card">
+                    <div className="card-body">
+                        {!isbacker ? (
+                            <>
+                                <h2 className="product_card_title">₹ {props.data.Current}</h2>
                                 <p className="product_card_desc">pledged of ₹ {props.data.Ask} goal</p>
                                 <h2 className="product_card_title">{props.data.Backers}</h2>
                                 <p className="product_card_desc">backers</p>
-                                <button type="button" onClick={() => setIsBacker(true)} className="btn backer__btn">Back this project</button></>) : (
-                                <>
-                                    <h4 className="text-center mb-3" style={{ fontWeight: "800" }}>Enter the Amount</h4>
-                                    <input type="number" min={10} max={1000} className="mb-3 product_card_amount_input" name="orderAmount" value={orderAmount} onChange={(e) => {
-                                        setOrderAmount(e.target.value);
-                                    }} required />
-                                    <button type="button" className="btn backer__btn" disabled={orderAmount > 10 ? false : true} onClick={() => {
-                                        loadRazorpay();
-                                    }}>Pay Now</button></>
-                            )}
-
-
-                        </div>
+                                <button type="button" onClick={() => setIsBacker(true)} className="btn backer__btn">Back this project</button>
+                            </>
+                        ) : (
+                            <>
+                                <h4 className="text-center mb-3" style={{ fontWeight: "800" }}>Enter the Amount</h4>
+                                <input 
+                                    type="number" 
+                                    min={10} 
+                                    max={1000} 
+                                    className="mb-3 product_card_amount_input" 
+                                    name="orderAmount" 
+                                    value={orderAmount} 
+                                    onChange={(e) => setOrderAmount(e.target.value)} 
+                                    required 
+                                />
+                                {orderAmount >= props.data.Ask || paymentSuccess ? (
+                                    <p className="text-success" style={{ fontWeight: "800" }}>Support amount completed!</p>
+                                ) : (
+                                    <button 
+                                        type="button" 
+                                        className="btn backer__btn" 
+                                        disabled={orderAmount <= 10} 
+                                        onClick={() => loadRazorpay()}
+                                    >
+                                        Pay Now
+                                    </button>
+                                )}
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
+
         </div>
+
+                </div>
+            
+        
     )
 }
 

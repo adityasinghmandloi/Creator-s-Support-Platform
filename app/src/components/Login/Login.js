@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import "./login.css";
+import register from "../images/home.png";
 import { Link, useNavigate } from "react-router-dom";
 import UserContext from '../../Context/userContext';
 import axios from '../../Axios/axios';
@@ -44,7 +45,7 @@ const Login = () => {
           <form onSubmit={handleSubmit}>
             <div className="row g-0">
               <div className="col-lg-6 col-sm-12">
-                <img src="https://bootstrapious.com/i/snippets/sn-registeration/illustration.svg" className="img-fluid rounded-start login__image" alt="login" />
+                <img src={register} className="img-fluid rounded-start login__image" alt="login" />
               </div>
               <div className="col-lg-6 col-sm-12">
                 <div className="card-body">

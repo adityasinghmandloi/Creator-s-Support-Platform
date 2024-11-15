@@ -1,29 +1,29 @@
 export const whatwedoobject = [
   {
-    title: "Public Engagement, Reach, and Opinions",
+    title: "Creator Visibility & Audience Reach",
     desc:
-      "We facilitate direct connections between entrepreneurs and their audience, offering a platform where they can present their ideas to the public.",
+      "We help creators connect with a larger audience, offering a platform where they can showcase their work and gain recognition.",
     icon: "icon fa fa-home",
   },
 
   {
-    title: "Convinience with Security",
+    title: "Secure & Convenient Transactions",
     desc:
-      "We offer users secure and convenient payment options like UPI, aiming to streamline and enhance the overall crowdfunding process.",
+      "We provide secure and easy payment methods like UPI, ensuring creators receive funding safely and quickly, without any hassle.",
     icon: "icon fa-solid fa-shield",
   },
 
   {
-    title: "An Awareness Platform",
+    title: "Education & Community Building",
     desc:
-      "We educate society about the crowdfunding ecosystem and offer abundant resources for both entrepreneurs and investors to responsibly engage in the crowdfunding process.",
+      "We offer resources to educate creators about the funding ecosystem, building a responsible and knowledgeable community of creators and supporters.",
     icon: "icon fa fa-user",
   },
 
   {
-    title: "Boost at initial stage",
+    title: "Early-Stage Support for Creators",
     desc:
-      "We support young entrepreneurs and startups in their early stages, ensuring they have the foundation to thrive in the long run.",
+      "We support creators in the initial stages of their journey, helping them establish a solid foundation to grow and succeed in the long term.",
     icon: "icon fa fa-running",
   },
 ];
